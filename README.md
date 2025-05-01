@@ -1,4 +1,4 @@
-# Travel Management System
+# TravelTurn
 
 A web-based Travel Management System built using **Java Servlets**, **JSP**, **JDBC**, and **MySQL**.  
 This system allows users to manage bookings, itineraries, and user accounts for travel services.
