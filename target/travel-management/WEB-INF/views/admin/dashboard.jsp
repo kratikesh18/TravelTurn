@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-&lt;!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,14 +9,14 @@
     <title>Admin Dashboard - Travel Management System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 <jsp:include page="../common/header.jsp" />
 
 <div class="container-fluid mt-4">
     <div class="row">
-        &lt;!-- Sidebar -->
+        <!-- Sidebar -->
         <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
             <div class="sidebar-sticky pt-3">
                 <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        &lt;!-- Main Content -->
+        <!-- Main Content -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Admin Dashboard</h1>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            &lt;!-- Stats Cards -->
+            <!-- Stats Cards -->
             <div class="row">
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow h-100 py-2 dashboard-card primary">
@@ -138,7 +138,7 @@
                 </div>
             </div>
 
-            &lt;!-- Booking Status Chart -->
+            <!-- Booking Status Chart -->
             <div class="row">
                 <div class="col-xl-8 col-lg-7">
                     <div class="card shadow mb-4">
@@ -178,7 +178,7 @@
                 </div>
             </div>
 
-            &lt;!-- Recent Bookings -->
+            <!-- Recent Bookings -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Recent Bookings</h6>
@@ -355,169 +355,6 @@
                 caretPadding: 10
             }
         }
-    });
-</script>
-</body>
-</html>
-
-```jsp file="src/main/webapp/WEB-INF/views/admin/users.jsp"
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users - Travel Management System</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-<jsp:include page="../common/header.jsp" />
-
-<div class="container-fluid mt-4">
-    <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-            <div class="sidebar-sticky pt-3">
-                <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>Admin Menu</span>
-                </h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/admin/dashboard">
-                            <i class="fas fa-tachometer-alt mr-2"></i>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="${pageContext.request.contextPath}/admin/users">
-                            <i class="fas fa-users mr-2"></i>
-                            Users
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/admin/destinations">
-                            <i class="fas fa-map-marked-alt mr-2"></i>
-                            Destinations
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/admin/bookings">
-                            <i class="fas fa-calendar-check mr-2"></i>
-                            Bookings
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Manage Users</h1>
-            </div>
-
-            <c:if test="${not empty successMessage}">
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        ${successMessage}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </c:if>
-
-            <c:if test="${not empty errorMessage}">
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        ${errorMessage}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </c:if>
-
-            <div class="card shadow mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Users List</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Export Options:</div>
-                            <a class="dropdown-item" href="#"><i class="fas fa-file-csv mr-2"></i>CSV</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-file-excel mr-2"></i>Excel</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-file-pdf mr-2"></i>PDF</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fas fa-print mr-2"></i>Print</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Username</th>
-                                <th>Full Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Role</th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="user" items="${users}">
-                                <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.username}</td>
-                                    <td>${user.fullName}</td>
-                                    <td>${user.email}</td>
-                                    <td>${user.phone}</td>
-                                    <td>
-                                        <c:choose>
-                                            <c:when test="${user.role eq 'admin'}">
-                                                <span class="badge badge-primary">Admin</span>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <span class="badge badge-secondary">Customer</span>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group btn-group-sm">
-                                            <a href="${pageContext.request.contextPath}/admin/users?action=edit&id=${user.id}" class="btn btn-info">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a href="${pageContext.request.contextPath}/admin/users?action=delete&id=${user.id}" class="btn btn-danger"
-                                               onclick="return confirm('Are you sure you want to delete this user?');">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-</div>
-
-<jsp:include page="../common/footer.jsp" />
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
     });
 </script>
 </body>
