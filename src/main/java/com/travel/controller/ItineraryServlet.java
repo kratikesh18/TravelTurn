@@ -5,10 +5,8 @@ import com.travel.dao.ItineraryDAO;
 import com.travel.model.Booking;
 import com.travel.model.Itinerary;
 import com.travel.model.User;
-
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +26,7 @@ public class ItineraryServlet extends HttpServlet {
         }
 
         String action = request.getParameter("action");
+
         if (action == null) {
             action = "view";
         }
@@ -56,6 +55,7 @@ public class ItineraryServlet extends HttpServlet {
         }
 
         String action = request.getParameter("action");
+
         if (action == null) {
             action = "add";
         }
